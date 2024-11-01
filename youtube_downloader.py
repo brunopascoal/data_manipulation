@@ -21,7 +21,7 @@ def run_youtube_downloader():
 
     if url:
         try:
-            yt = YouTube(url)
+            yt = YouTube(url, use_po_token=True)
             
             options = [
                 {
