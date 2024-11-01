@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-# Função para concatenar arquivos
 def concatenate_files(files):
     dataframes = []
     for file in files:
@@ -14,11 +13,9 @@ def concatenate_files(files):
             return None
         dataframes.append(df)
     
-    # Concatenar todos os DataFrames sem considerar as colunas
     concatenated_df = pd.concat(dataframes, axis=0, ignore_index=True)
     return concatenated_df
 
-# Aplicação principal
 def run_concat_files():
     st.title("Concatenar Arquivos Excel/CSV")
 
@@ -36,7 +33,6 @@ def run_concat_files():
                 st.write("Arquivos concatenados com sucesso!")
                 st.dataframe(concatenated_df)
                 
-                # Opção para baixar o arquivo concatenado
                 csv = concatenated_df.to_csv(index=False).encode('utf-8')
                 st.download_button(
                     label="Baixar arquivo concatenado",

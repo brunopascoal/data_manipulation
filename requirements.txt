@@ -27,6 +27,8 @@ pyarrow==18.0.0
 pydeck==0.9.1
 Pygments==2.18.0
 python-dateutil==2.9.0.post0
+pytube==15.0.0
+pytubefix==8.2.0
 pytz==2024.2
 referencing==0.35.1
 requests==2.32.3

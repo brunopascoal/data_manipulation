@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 
 def read_file(file):
-    """Lê um arquivo CSV ou Excel e retorna um DataFrame."""
     if file.name.endswith('.csv'):
         return pd.read_csv(file)
     elif file.name.endswith('.xlsx'):
@@ -12,7 +11,6 @@ def read_file(file):
         return None
 
 def get_columns(file):
-    """Retorna a lista de colunas de um arquivo."""
     df = read_file(file)
     if df is not None:
         return df.columns.tolist()
