@@ -12,6 +12,7 @@ def main():
         choice = option_menu(
             "Menu",
             [
+                "Pagina inicial",
                 "Juntar Arquivos",
                 "Juntar Arquivos por Colunas Diferentes",
           
@@ -23,12 +24,20 @@ def main():
         st.caption('Versão atual: 1.0.0')
 
 
-    if choice == "Juntar Arquivos":
+    if choice == "Pagina inicial":
+        st.markdown("""
+            # Sistema Manipulação de arquivos
+            ## Bem-vindo
+            ### Acesse as funcionalidades no menu ao lado
+        """)
+        st.divider()
+    elif choice == "Juntar Arquivos":
         run_concat_files()
 
     
-    if choice == "Juntar Arquivos por Colunas Diferentes":
+    elif choice == "Juntar Arquivos por Colunas Diferentes":
         run_join_files()
+
 
 if __name__ == '__main__':
     main()
