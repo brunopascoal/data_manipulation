@@ -13,7 +13,7 @@ def main():
                 "Pagina inicial",
                 "Juntar Arquivos",
                 "Juntar Arquivos por Colunas Diferentes",
-                "Youtube Downloader"
+                # "Youtube Downloader"
           
             ],
             icons=[ "infinity", "cash-coin"],
@@ -46,8 +46,8 @@ def main():
     elif choice == "Juntar Arquivos por Colunas Diferentes":
         run_join_files()
 
-    elif choice == "Youtube Downloader":
-        run_youtube_downloader()
+    # elif choice == "Youtube Downloader":
+    #     run_youtube_downloader()
 
 
 
