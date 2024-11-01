@@ -2,11 +2,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from concat_files import run_concat_files
 from join_files import run_join_files
+from youtube_downloader import run_youtube_downloader
 
-def main():
-    st.title("Manipulação de dados")
-    
-    # Menu com uma opção
+def main():    
     with st.sidebar:
         st.sidebar.title("Menu")
         choice = option_menu(
@@ -15,6 +13,7 @@ def main():
                 "Pagina inicial",
                 "Juntar Arquivos",
                 "Juntar Arquivos por Colunas Diferentes",
+                "Youtube Downloader"
           
             ],
             icons=[ "infinity", "cash-coin"],
@@ -34,7 +33,7 @@ def main():
         """, unsafe_allow_html=True)
 
 
-        st.divider()  # 👈 Draws a horizontal rule
+        st.divider() 
         st.markdown(f"""
             <div style='display: flex; align-items: center; justify-content: center;'>
                 <p>Boas vindas! Selecione no menu à esquerda a ferramenta que deseja utilizar e bom trabalho!</p>
@@ -46,6 +45,10 @@ def main():
     
     elif choice == "Juntar Arquivos por Colunas Diferentes":
         run_join_files()
+
+    elif choice == "Youtube Downloader":
+        run_youtube_downloader()
+
 
 
 if __name__ == '__main__':
