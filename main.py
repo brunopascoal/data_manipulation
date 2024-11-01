@@ -25,12 +25,21 @@ def main():
 
 
     if choice == "Pagina inicial":
-        st.markdown("""
-            # Sistema Manipulação de arquivos
-            ## Bem-vindo
-            ### Acesse as funcionalidades no menu ao lado
-        """)
-        st.divider()
+    
+
+        st.markdown(f"""
+            <div style='display: flex; align-items: center; justify-content: center;'>
+                <h2>Sistema Manipulação de dados</h2>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+        st.divider()  # 👈 Draws a horizontal rule
+        st.markdown(f"""
+            <div style='display: flex; align-items: center; justify-content: center;'>
+                <p>Boas vindas! Selecione no menu à esquerda a ferramenta que deseja utilizar e bom trabalho!</p>
+            </div>
+        """, unsafe_allow_html=True)
     elif choice == "Juntar Arquivos":
         run_concat_files()
 
