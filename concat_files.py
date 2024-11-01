@@ -20,26 +20,29 @@ def concatenate_files(files):
 
 # Aplicação principal
 def run_concat_files():
-    st.title("Aplicação de Juntar Arquivos Excel/CSV")
-    
+    st.title("Concatenar Arquivos Excel/CSV")
 
+    tab1, tab2 = st.tabs(["🧮 Concatenar", "⚠ Como usar"])
+
+
+    with tab1:
     
-    st.subheader("Juntar Arquivos Excel/CSV")
-    
-    uploaded_files = st.file_uploader("Envie seus arquivos", type=["csv", "xlsx"], accept_multiple_files=True)
-    
-    if uploaded_files:
-        concatenated_df = concatenate_files(uploaded_files)
+        uploaded_files = st.file_uploader("Envie seus arquivos", type=["csv", "xlsx"], accept_multiple_files=True)
         
-        if concatenated_df is not None:
-            st.write("Arquivos concatenados com sucesso!")
-            st.dataframe(concatenated_df)
+        if uploaded_files:
+            concatenated_df = concatenate_files(uploaded_files)
             
-            # Opção para baixar o arquivo concatenado
-            csv = concatenated_df.to_csv(index=False).encode('utf-8')
-            st.download_button(
-                label="Baixar arquivo concatenado",
-                data=csv,
-                file_name='concatenated_files.csv',
-                mime='text/csv',
-            )
+            if concatenated_df is not None:
+                st.write("Arquivos concatenados com sucesso!")
+                st.dataframe(concatenated_df)
+                
+                # Opção para baixar o arquivo concatenado
+                csv = concatenated_df.to_csv(index=False).encode('utf-8')
+                st.download_button(
+                    label="Baixar arquivo concatenado",
+                    data=csv,
+                    file_name='concatenated_files.csv',
+                    mime='text/csv',
+                )
+    with tab2:
+        st.title("Como Usar")
